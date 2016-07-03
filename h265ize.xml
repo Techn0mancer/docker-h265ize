@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+  <Name>h265ize</Name>
+  <Support></Support>
+  <Project>https://github.com/FallingSnow/h265ize</Project>
+  <Description>h265ize</Description>
+  <Registry>https://github.com/Techn0mancer/docker-h265ize</Registry>
+  <Repository>Techn0mancer/h265ize</Repository>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Beta>True</Beta>
+  <Category></Category>
+  <Date>2016-07-03</Date>
+  <Changes>Initial release</Changes>
+  <Environment>
+    <Variable>
+      <Name>PUID</Name>
+      <Value>99</Value>
+    </Variable>
+    <Variable>
+      <Name>PGID</Name>
+      <Value>100</Value>
+    </Variable>
+  </Environment>
+  <Networking>
+    <Mode>bridge</Mode>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir></HostDir>
+      <ContainerDir>/input</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir></HostDir>
+      <ContainerDir>/output</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume></Data>
+  <Version></Version>
+<ExtraParams></ExtraParams>
+</Container>
