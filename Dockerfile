@@ -1,9 +1,9 @@
-FROM linuxserver/baseimage.node
+FROM linuxserver/baseimage
 MAINTAINER Techn0mancer
 
 RUN add-apt-repository ppa:mc3man/trusty-media && \
 apt-get update && \
-apt-get install -qy ffmpeg && \
+apt-get install -qy ffmpeg nodejs git-core && \
 apt-get clean
 
 RUN git clone https://github.com/FallingSnow/h265ize.git && \
