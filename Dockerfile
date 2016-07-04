@@ -4,7 +4,7 @@ MAINTAINER Techn0mancer
 RUN add-apt-repository ppa:mc3man/trusty-media && \
 apt-get update && apt-get install -qy \
 build-essential \
-#git-core \
+git-core \
 ffmpeg \
 nodejs \
 npm \
