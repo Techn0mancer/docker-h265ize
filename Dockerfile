@@ -13,8 +13,8 @@ npm \
 RUN npm cache clean -f && \
 npm install -g n && \
 n stable && \
-node --version && \
-node app.js
+node --version #&& \
+#node app.js
 
 RUN mkdir -p /h265ize
 WORKDIR /h265ize
