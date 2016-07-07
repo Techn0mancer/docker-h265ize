@@ -2,11 +2,12 @@ FROM linuxserver/baseimage
 MAINTAINER Techn0mancer
 
 RUN add-apt-repository ppa:mc3man/trusty-media && \
+add-apt-repository ppa:ruediger-c-plusplus/vobsub2srt && \
 apt-get update && apt-get install -qy \
 build-essential \
 git-core \
 ffmpeg \
-mkvtoolnix \
+#mkvtoolnix \
 nodejs \
 npm \
 vobsub2srt \
