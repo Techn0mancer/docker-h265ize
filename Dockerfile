@@ -1,8 +1,8 @@
 FROM ubuntu:latest
 MAINTAINER Techn0mancer
 
-RUN add-apt-repository ppa:mc3man/trusty-media && \
-apt-get update && apt-get install -qy \
+#RUN add-apt-repository ppa:mc3man/trusty-media && \
+RUN apt-get update && apt-get install -qy \
 build-essential \
 git-core \
 ffmpeg \
