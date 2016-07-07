@@ -10,6 +10,12 @@ nodejs \
 npm \
 && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+RUN npm cache clean -f && \
+npm install -g n && \
+n stable && \
+node --version && \
+node app.js
+
 RUN mkdir -p /h265ize
 WORKDIR /h265ize
 
