@@ -1,4 +1,4 @@
-FROM base/archlinux
+FROM binhex/arch-base
 #FROM linuxserver/baseimage
 MAINTAINER Techn0mancer
 
