@@ -10,10 +10,14 @@ nodejs \
 npm \
 && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+RUN mkdir -p /h265ize
+WORKDIR /h265ize
+
 RUN ln -s "$(which nodejs)" /usr/bin/node
 RUN git clone https://github.com/FallingSnow/h265ize.git && \
 cd h265ize && \
-npm install h265ize && \
+npm install && \
 chmod +x h265ize
 
 VOLUME /input /output
+CMD [ "npm", "start" ]
