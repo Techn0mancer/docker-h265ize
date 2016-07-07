@@ -20,4 +20,3 @@ npm install && \
 chmod +x h265ize
 
 VOLUME /input /output
-CMD [ "npm", "start" ]
