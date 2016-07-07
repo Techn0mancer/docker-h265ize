@@ -6,17 +6,18 @@ apt-get update && apt-get install -qy \
 build-essential \
 git-core \
 ffmpeg \
+mkvtoolnix \
 nodejs \
 npm \
+vobsub2srt \
 && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN npm cache clean -f && \
 npm install -g n && \
 n stable && \
 node --version
-#node app.js
 
-RUN mkdir -p /h265ize
+RUN mkdir /h265ize
 WORKDIR /h265ize
 
 RUN ln -s "$(which nodejs)" /usr/bin/node
