@@ -2,7 +2,7 @@ FROM linuxserver/baseimage
 MAINTAINER Techn0mancer
 
 RUN add-apt-repository ppa:mc3man/trusty-media && \
-add-apt-repository ppa:ruediger-c-plusplus/vobsub2srt && \
+#add-apt-repository ppa:ruediger-c-plusplus/vobsub2srt && \
 apt-get update && apt-get install -qy \
 build-essential \
 git-core \
@@ -10,7 +10,7 @@ ffmpeg \
 #mkvtoolnix \
 nodejs \
 npm \
-vobsub2srt \
+#vobsub2srt \
 && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN npm cache clean -f && \
