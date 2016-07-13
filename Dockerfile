@@ -1,6 +1,8 @@
 FROM linuxserver/baseimage
 MAINTAINER Techn0mancer
 
+RUN wget -q -O - https://mkvtoolnix.download/gpg-pub-moritzbunkus.txt | sudo apt-key add -
+RUN add-apt-repository deb http://mkvtoolnix.download/ubuntu/wily/ ./
 RUN add-apt-repository ppa:mc3man/trusty-media && \
 #add-apt-repository ppa:ruediger-c-plusplus/vobsub2srt && \
 apt-get update && apt-get install -qy \
@@ -19,8 +21,8 @@ npm install -g n && \
 n stable && \
 node --version
 
-RUN mkdir /h265ize
-WORKDIR /h265ize
+#RUN mkdir /h265ize
+#WORKDIR /h265ize
 
 RUN ln -s "$(which nodejs)" /usr/bin/node
 #RUN git clone https://github.com/FallingSnow/h265ize.git && \
