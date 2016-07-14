@@ -1,14 +1,17 @@
 FROM linuxserver/baseimage
 MAINTAINER Techn0mancer
 
-RUN add-apt-repository ppa:mc3man/trusty-media && \
-apt-get update && apt-get install -qy \
+RUN echo "deb http://mkvtoolnix.download/ubuntu/wily/ ./" >> /etc/apt/sources.list
+RUN add-apt-repository add-apt-repository ppa:ruediger-c-plusplus/vobsub2srt
+RUN add-apt-repository ppa:mc3man/trusty-media
+RUN apt-get update && apt-get install -qy \
 #build-essential \
 #git-core \
 ffmpeg \
+mkvtoolnix \
 #nodejs \
 npm \
-#vobsub2srt \
+vobsub2srt \
 && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN mkdir /h265ize && cd /h265ize
