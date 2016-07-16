@@ -1,7 +1,7 @@
 FROM linuxserver/baseimage
 MAINTAINER Techn0mancer
 
-RUN echo "deb http://mkvtoolnix.download/ubuntu/wily/ ./" >> /etc/apt/sources.list
+RUN echo "deb http://mkvtoolnix.download/ubuntu/trusty/ ./" >> /etc/apt/sources.list
 #RUN add-apt-repository ppa:ruediger-c-plusplus/vobsub2srt
 RUN add-apt-repository ppa:mc3man/trusty-media
 RUN apt-get update && apt-get install -qy \
