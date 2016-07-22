@@ -11,15 +11,15 @@ npm \
 #vobsub2srt \
 && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-#RUN mkdir /h265ize && cd /h265ize
+#RUN mkdir /h265ize
 #WORKDIR /h265ize
 
-RUN npm install h265ize
 RUN npm cache clean -f && \
 npm install -g n && \
 n stable && \
 node --version
 
 RUN ln -s "$(which nodejs)" /usr/bin/node
+RUN npm install h265ize
 
 VOLUME /input /output
