@@ -14,10 +14,8 @@ npm \
 RUN npm cache clean -f && \
 npm install -g n && \
 n stable && \
-node --version
-
-RUN ln -s "$(which nodejs)" /usr/bin/node
-RUN npm install h265ize
-RUN cd /node_modules/h265ize
+node --version && \
+npm install h265ize && \
+ln -s "$(which nodejs)" /usr/bin/node
 
 VOLUME /input /output
