@@ -15,7 +15,7 @@ node --version
 
 RUN npm install h265ize
 
-RUN ln -s "$(which nodejs)" /usr/bin/node
+#RUN ln -s "$(which nodejs)" /usr/bin/node
 #RUN git clone https://github.com/FallingSnow/h265ize.git && \
 #cd h265ize && \
 #npm install && \
