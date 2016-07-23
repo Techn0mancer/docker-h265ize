@@ -1,7 +1,7 @@
 FROM linuxserver/baseimage
 MAINTAINER Techn0mancer
 
-#RUN add-apt-repository ppa:mc3man/trusty-media
+RUN add-apt-repository ppa:mc3man/trusty-media
 RUN apt-get update && apt-get install -qy --force-yes \
 #ffmpeg \
 npm \
