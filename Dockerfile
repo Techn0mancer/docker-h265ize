@@ -5,6 +5,7 @@ RUN add-apt-repository ppa:mc3man/trusty-media
 RUN apt-get update && apt-get install -qy --force-yes \
 git \
 ffmpeg \
+mkvtoolnix \
 npm \
 && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
