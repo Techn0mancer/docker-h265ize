@@ -1,4 +1,4 @@
-FROM linuxserver/baseimage
+FROM ubuntu/latest
 MAINTAINER Techn0mancer
 
 RUN add-apt-repository ppa:mc3man/trusty-media
