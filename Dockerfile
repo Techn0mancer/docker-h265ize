@@ -1,4 +1,4 @@
-FROM linuxserver/baseimage
+FROM phusion/baseimage:0.9.18
 MAINTAINER Techn0mancer
 
 RUN add-apt-repository ppa:mc3man/trusty-media
