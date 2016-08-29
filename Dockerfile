@@ -3,6 +3,7 @@ MAINTAINER Techn0mancer
 
 #RUN add-apt-repository ppa:mc3man/trusty-media
 RUN apt-get update && apt-get install -qy --force-yes \
+curl \
 git \
 ffmpeg \
 mkvtoolnix \
