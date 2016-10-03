@@ -7,6 +7,7 @@ wget \
 git \
 ffmpeg \
 mkvtoolnix \
+nodejs \
 npm \
 && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
