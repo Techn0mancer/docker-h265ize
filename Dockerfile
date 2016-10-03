@@ -3,11 +3,11 @@ MAINTAINER Techn0mancer
 
 #RUN add-apt-repository ppa:mc3man/trusty-media
 RUN apt-get update && apt-get install -qy --force-yes \ \
-#git \
+curl \
+git \
 ffmpeg \
 mkvtoolnix \
 npm \
-wget \
 && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN npm cache clean -f && \
