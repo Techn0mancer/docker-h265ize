@@ -10,12 +10,12 @@ mkvtoolnix \
 npm \
 && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN npm cache clean -f && \
-npm install -g n && \
-n stable && \
-node --version
+#RUN npm cache clean -f && \
+#npm install -g n && \
+#n stable && \
+#node --version
 
-RUN npm install h265ize --global && \
-ln -s /usr/bin/local/h265ize /h265ize
+RUN npm install h265ize --global
+RUN ln -s /usr/bin/local/h265ize /h265ize
 
 VOLUME /input /output
