@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:xenial
 MAINTAINER Techn0mancer
 
 #RUN add-apt-repository ppa:mc3man/trusty-media
@@ -8,8 +8,7 @@ git \
 ffmpeg \
 mkvtoolnix \
 #nodejs \
-npm \
-&& apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+npm
 
 RUN npm cache clean -f && \
 npm install -g n && \
