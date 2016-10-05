@@ -1,4 +1,4 @@
-FROM lsiobase/xenial
+FROM ubuntu:16.04
 MAINTAINER Techn0mancer
 
 RUN apt-get update && apt-get install -qy --force-yes \
