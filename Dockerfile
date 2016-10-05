@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM lsiobase/xenial
 MAINTAINER Techn0mancer
 
 RUN apt-get update && apt-get install -qy --force-yes \
@@ -15,4 +15,3 @@ RUN npm cache clean -f && npm install -g n && n stable && node --version
 RUN npm install h265ize --global && ln -s /usr/bin/local/h265ize /h265ize
 
 VOLUME /input /output
-ENTRYPOINT ["/init"] 
