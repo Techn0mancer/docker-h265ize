@@ -1,4 +1,4 @@
-FROM ubuntu/xenial
+FROM ubuntu
 MAINTAINER Techn0mancer
 
 RUN apt-get update && apt-get install -qy --force-yes \
