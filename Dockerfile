@@ -15,3 +15,4 @@ MAINTAINER Techn0mancer
 #RUN npm install h265ize --global && ln -s /usr/bin/local/h265ize /h265ize
 
 VOLUME /input /output
+ENTRYPOINT ["/init"]
