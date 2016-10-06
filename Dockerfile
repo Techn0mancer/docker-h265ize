@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 MAINTAINER Techn0mancer
 
-RUN ENV DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -qy \
+RUN apt-get update && ENV DEBIAN_FRONTEND=noninteractive apt-get install -qy \
 curl \
 ffmpeg \
 mkvtoolnix \
