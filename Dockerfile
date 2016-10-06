@@ -1,19 +1,26 @@
-FROM ubuntu:16.04
+FROM alpine:3.4
 MAINTAINER Techn0mancer
 
-ADD https://github.com/just-containers/s6-overlay/releases/download/v1.11.0.1/s6-overlay-amd64.tar.gz /tmp/
-RUN tar xzf /tmp/s6-overlay-amd64.tar.gz -C /
-
-RUN apt-get update && apt-get install -qy \
+RUN apk add --no-cache --update \
+        bash \
 	curl \
 	ffmpeg \
-	mkvtoolnix \
 	nodejs \
-	npm
+	tar && \
 
-RUN npm cache clean -f && npm install -g n && n stable && node --version
+    curl -o /tmp/s6-overlay.tar.gz -L \
+	"https://github.com/just-containers/s6-overlay/releases/download/v1.18.1.5/s6-overlay-amd64.tar.gz " && \
+	tar xvfz /tmp/s6-overlay.tar.gz -C / && \
 
-RUN npm install h265ize --global && ln -s /usr/bin/local/h265ize /h265ize
+    apk add --no-cache --repository http://nl.alpinelinux.org/alpine/edge/testing \
+	mkvtoolnix && \
+
+    npm install h265ize --global && ln -s /usr/bin/local/h265ize /h265ize && \
+
+    apk del --purge \
+	curl tar && \
+    rm -rf /var/cache/apk/* /tmp/*
 
 VOLUME /input /output
+
 ENTRYPOINT ["/init"]
