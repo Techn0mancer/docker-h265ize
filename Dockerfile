@@ -8,6 +8,14 @@ RUN apk add --no-cache --update \
 	nodejs \
 	tar && \
 
+    apk add --no-cache \
+	libtiff5-dev \
+	libtesseract-dev \
+	tesseract-ocr-eng \
+	build-essential \
+	cmake \
+	pkg-config && \
+
     curl -o /tmp/s6-overlay.tar.gz -L \
 	"https://github.com/just-containers/s6-overlay/releases/download/v1.18.1.5/s6-overlay-amd64.tar.gz " && \
 	tar xvfz /tmp/s6-overlay.tar.gz -C / && \
@@ -18,7 +26,7 @@ RUN apk add --no-cache --update \
     npm install h265ize --global && ln -s /usr/bin/local/h265ize /h265ize && \
 
     apk del --purge \
-	curl tar && \
+	curl tar libtiff5-dev libtesseract-dev tesseract-ocr-eng build-essential cmake pkg-config && \
     rm -rf /var/cache/apk/* /tmp/*
 
 VOLUME /input /output
