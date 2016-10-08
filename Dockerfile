@@ -1,6 +1,8 @@
 FROM alpine:3.4
 MAINTAINER Techn0mancer
 
+ENV TERM="xterm"
+
 RUN apk add --no-cache --update \
         bash \
 	curl \
