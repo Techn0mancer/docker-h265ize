@@ -15,8 +15,11 @@ RUN apk add --no-cache --update \
 	"https://github.com/just-containers/s6-overlay/releases/download/v1.18.1.5/s6-overlay-amd64.tar.gz " && \
 	tar xvfz /tmp/s6-overlay.tar.gz -C / && \
 
+
+    apk add --no-cache --repository http://nl.alpinelinux.org/alpine/edge/main \
+	boost && \
+	
     apk add --no-cache --repository http://nl.alpinelinux.org/alpine/edge/testing \
-	boost \
 	mkvtoolnix && \
 
     npm install FallingSnow/h265ize --global && ln -s /usr/bin/local/h265ize /h265ize && \
