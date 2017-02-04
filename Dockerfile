@@ -7,7 +7,6 @@ RUN apk add --no-cache --update \
         bash \
 	curl \
 	ffmpeg \
-	git \
 	nodejs \
 	tar && \
 
@@ -18,10 +17,10 @@ RUN apk add --no-cache --update \
     apk add --no-cache --repository http://nl.alpinelinux.org/alpine/edge/testing \
 	mkvtoolnix && \
 
-    npm install FallingSnow/h265ize --global && ln -s /usr/bin/local/h265ize /h265ize && \
+    npm install h265ize --global && ln -s /usr/bin/local/h265ize /h265ize && \
 
     apk del --purge \
-	curl git tar && \
+	curl tar && \
     rm -rf /var/cache/apk/* /tmp/*
 
 VOLUME /input /output
