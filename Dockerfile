@@ -5,7 +5,6 @@ ENV TERM="xterm"
 
 RUN apk add --no-cache --update \
         bash \
-	boost \
 	curl \
 	ffmpeg \
 	git \
@@ -17,12 +16,13 @@ RUN apk add --no-cache --update \
 	tar xvfz /tmp/s6-overlay.tar.gz -C / && \
 
     apk add --no-cache --repository http://nl.alpinelinux.org/alpine/edge/testing \
+	boost \
 	mkvtoolnix && \
 
     npm install FallingSnow/h265ize --global && ln -s /usr/bin/local/h265ize /h265ize && \
 
     apk del --purge \
-	curl tar && \
+	curl git tar && \
     rm -rf /var/cache/apk/* /tmp/*
 
 VOLUME /input /output
